@@ -1,0 +1,68 @@
+#!/bin/bash
+
+##########################################################################################
+#  Copyright (c) 2013, Björn Schramke
+#  All rights reserved.
+#
+#  Redistribution and use in source and binary forms, with or without modification,
+#  are permitted provided that the following conditions are met:
+#
+#    Redistributions of source code must retain the above copyright notice, this
+#    list of conditions and the following disclaimer.
+#
+#    Redistributions in binary form must reproduce the above copyright notice, this
+#    list of conditions and the following disclaimer in the documentation and/or
+#    other materials provided with the distribution.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+#  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+#  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+#  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+#  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+#  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+#  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+#  ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+#  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changelog:
+#
+# Version 0.1  - inital development
+#
+##########################################################################################
+
+# Constants
+SCRIPTVERSION="0.1"
+AUTHOR="Björn Schramke"
+AUTHOR_MAIL="bjoern@schramke-online.de"
+
+##########################################################################################
+# Colors
+
+disable_color() {
+        red='' ; green='' ; yellow='' ; blue='' ; pink='' ; cyan='' ; white=''
+        dim_red='' ; dim_green='' ; dim_yellow='' ; dim_blue='' ; dim_pink=''
+        dim_cyan='' ; dim_white='' ; reset=''
+}
+disable_color
+if [ -t 1 ] && [ "$(tput colors 2> /dev/null)" != -1 ] ; then
+
+               red="$(printf '\033[1;31m')"
+             green="$(printf '\033[1;32m')"
+            yellow="$(printf '\033[1;33m')"
+              blue="$(printf '\033[1;34m')"
+              pink="$(printf '\033[1;35m')"
+              cyan="$(printf '\033[1;36m')"
+             white="$(printf '\033[1;37m')"
+
+           dim_red="$(printf '\033[0;31m')"
+         dim_green="$(printf '\033[0;32m')"
+        dim_yellow="$(printf '\033[0;33m')"
+          dim_blue="$(printf '\033[0;34m')"
+          dim_pink="$(printf '\033[0;35m')"
+          dim_cyan="$(printf '\033[0;36m')"
+         dim_white="$(printf '\033[0;37m')"
+
+             reset="$(printf '\033[0m')"
+fi
+
